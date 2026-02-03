@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Developer Portfolio</title>
+    <style>
+        /* --- CSS VARIABLES (Change colors here) --- */
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent: #00ff88; /* Matrix/Unity Green */
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* --- GLOBAL RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: var(--font-main); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .section { padding: 60px 0; border-bottom: 1px solid #333; }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .btn:hover { background: var(--accent); color: #000; }
+        .btn-solid { background: var(--accent); color: #000; }
+
+        /* --- HERO SECTION --- */
+        .hero { text-align: center; padding: 100px 20px; }
+        .profile-img {
+            width: 150px; height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 20px;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 30px; }
+        .social-links a { font-size: 1.5rem; margin: 0 10px; color: var(--text-muted); }
+        .social-links a:hover { color: var(--accent); }
+
+        /* --- SKILLS SECTION --- */
+        .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
+        .skill-tag { background: #333; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; }
+
+        /* --- PROJECTS GRID (The Core) --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-thumb {
+            width: 100%;
+            height: 180px;
+            background-color: #333; /* Fallback color */
+            object-fit: cover;
+        }
+        .project-info { padding: 20px; }
+        .project-title { font-size: 1.4rem; margin-bottom: 5px; color: var(--accent); }
+        .project-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
+        .project-links { display: flex; gap: 10px; }
+        .btn-small { padding: 5px 10px; font-size: 0.8rem; border: 1px solid #555; color: #fff; }
+        .btn-small:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .project-links { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="container hero">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+        
+        <h1>Your Name</h1>
+        <p>Unity Game Developer | C# Programmer | Level Designer</p>
+        
+        <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Itch.io</a>
+            <a href="#">Email</a>
+        </div>
+        <br>
+        <a href="assets/resume.pdf" download class="btn btn-solid">Download Resume</a>
+    </header>
+
+    <section class="container section">
+        <h2 style="text-align: center;">Technical Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Unity 3D/2D</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Blender</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Shader Graph</span>
+            <span class="skill-tag">Firebase</span>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2 style="text-align: center; margin-bottom: 20px;">My Games</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Game Thumbnail" class="project-thumb">
+                <div class="project-info">
+                    <h3 class="project-title">Space Shooter 3000</h3>
+                    <p class="project-desc">A fast-paced arcade shooter made with Unity. Features custom shaders and endless waves.</p>
+                    <div class="project-links">
+                        <a href="https://your-itch-link.com" target="_blank" class="btn btn-small">🎮 Play Game</a>
+                        <a href="https://youtube.com" target="_blank" class="btn btn-small">🎬 Watch Gameplay</a>
+                        <a href="#" target="_blank" class="btn btn-small">💻 View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Game Thumbnail" class="project-thumb">
+                <div class="project-info">
+                    <h3 class="project-title">Mystic RPG</h3>
+                    <p class="project-desc">Turn-based RPG system. Implements inventory management and save systems.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-small">🎮 Play Game</a>
+                        <a href="#" class="btn btn-small">🎬 Watch Gameplay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Game Thumbnail" class="project-thumb">
+                <div class="project-info">
+                    <h3 class="project-title">Hyper Casual Demo</h3>
+                    <p class="project-desc">Mobile-optimized physics puzzle game. Released on Google Play Store.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-small">📱 Google Play</a>
+                        <a href="#" class="btn btn-small">🎬 Watch Gameplay</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Your Name. Built with code & coffee.</p>
+    </footer>
+
+</body>
+</html>
